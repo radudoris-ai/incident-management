@@ -18,6 +18,7 @@ class ProcessorService extends cds.ApplicationService {
   async onUpdate (req) {
     let closed = await SELECT.one(1) .from (req.subject) .where `status.code = 'C'`
     if (closed) req.reject `Can't modify a closed incident!`
+    // comment for test
   }
 }
 module.exports = { ProcessorService }
