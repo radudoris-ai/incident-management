@@ -1,10 +1,12 @@
 using { cuid, managed, sap.common.CodeList } from '@sap/cds/common';
+using { API_BUSINESS_PARTNER } from '../srv/external/API_BUSINESS_PARTNER';
 namespace sap.capire.incidents; 
 
 /**
 * Incidents created by Customers.
 */
 entity Incidents : cuid, managed {  
+participantDo: Association to many API_BUSINESS_PARTNER.A_BusinessPartner;    
 customer     : Association to Customers;
 title        : String  @title : 'Title';
 urgency        : Association to Urgency default 'M';

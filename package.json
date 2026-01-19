@@ -16,6 +16,7 @@
     "@cap-js/cds-test": "^0.4.1",
     "@cap-js/sqlite": "^2.1.2",
     "@sap/cds-dk": "^9",
+    "@ui5/cli": "^4.0.39",
     "cds-plugin-ui5": "^0.13.0",
     "mbt": "^1.2.24",
     "rimraf": "^5.0.5"
@@ -57,8 +58,13 @@
       "workzone": true,
       "API_BUSINESS_PARTNER": {
         "kind": "odata-v2",
-        "model": "srv/external/API_BUSINESS_PARTNER"
-         
+        "model": "srv/external/API_BUSINESS_PARTNER",
+        "credentials": {
+          "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/",
+          "headers": {
+            "APIKey": "RkXoA2GTHldR1I2F5pRL4kpspa1V7Um0"
+          }
+        }
       }
     }
   },
