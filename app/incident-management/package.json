@@ -8,10 +8,12 @@
     "sapui5"
   ],
   "main": "webapp/index.html",
-  "dependencies": {},
+  "dependencies": {
+    "mbt": "1.2.24"
+  },
   "devDependencies": {
-    "@ui5/cli": "^4.0.33",
     "@sap/ux-ui5-tooling": "1",
+    "@ui5/cli": "^1.14.0",
     "ui5-task-zipper": "^3.4.x"
   },
   "scripts": {

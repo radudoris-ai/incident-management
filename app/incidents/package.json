@@ -10,7 +10,7 @@
   "main": "webapp/index.html",
   "devDependencies": {
     "@sap/ux-ui5-tooling": "^1.20.0",
-    "@ui5/cli": "^4.0.33",
+    "@ui5/cli": "^1.14.0",
     "ui5-task-zipper": "^3"
   },
   "scripts": {
@@ -18,5 +18,8 @@
     "build": "ui5 build preload --clean-dest",
     "start": "ui5 serve",
     "build:cf": "ui5 build --clean-dest"
+  },
+  "dependencies": {
+    "mbt": "1.2.24"
   }
 }

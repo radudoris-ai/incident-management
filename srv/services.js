@@ -37,10 +37,29 @@ class ProcessorService extends cds.ApplicationService {
       return next();
     }
 
-    const { BusinessPartner } = this.remoteService.entities;
+  
+    const { A_BusinessPartner } = this.S4bupa.entities;
+    let result = await this.S4bupa.run(SELECT.from(A_BusinessPartner, bp => {
+      bp('*'),
+        bp.to_BusinessPartnerAddress(address => {
+          //   address('email'),
+          address.to_EmailAddress(emails => {
+            emails('EmailAddress');
+          });
+        })
+    }).limit(top, skip));
 
+  console.log(result);
+    result = result.map((bp) => ({
+      ID: bp.ID,
+      name: bp.BusinessPartnerName,
+      email: bp.to_BusinessPartnerAddress[0]?.to_EmailAddress[0]?.EmailAddress
+    }));
+
+     /*
+  const { BusinessPartner } = this.remoteService.entities;
     // Expands are required as the runtime does not support path expressions for remote services 
-    let result = await this.S4bupa.run(SELECT.from(BusinessPartner, bp => {
+    let result = await this.S4bupa.run(SELECT.from(A_BusinessPartner, bp => {
       bp('*'),
         bp.addresses(address => {
           //   address('email'),
@@ -49,6 +68,7 @@ class ProcessorService extends cds.ApplicationService {
           });
         })
     }).limit(top, skip));
+   
 
     console.log(result);
     result = result.map((bp) => ({
@@ -56,6 +76,7 @@ class ProcessorService extends cds.ApplicationService {
       name: bp.name,
       email: bp.addresses[0]?.email[0]?.email
     }));
+     */
 
     // Explicitly set $count so the values show up in the value help in the UI
     result.$count = 1000;

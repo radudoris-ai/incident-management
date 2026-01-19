@@ -17,7 +17,7 @@
     "@cap-js/sqlite": "^2.1.2",
     "@sap/cds-dk": "^9",
     "cds-plugin-ui5": "^0.13.0",
-    "mbt": "^1.2.29",
+    "mbt": "^1.2.24",
     "rimraf": "^5.0.5"
   },
   "scripts": {
@@ -56,21 +56,9 @@
       "html5-repo": true,
       "workzone": true,
       "API_BUSINESS_PARTNER": {
-        "kind": "odata",
-        "model": "srv/external/API_BUSINESS_PARTNER",
-        "[development]": {
-          "credentials": {
-            "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/",
-            "APIKey": "RkXoA2GTHldR1I2F5pRL4kpspa1V7Um0"
-          }
-        },
-        "[production]": {
-          "credentials": {
-            "destination": "S4HANA",
-            "path": "/sap/opu/odata/sap",
-            "APIKey": "RkXoA2GTHldR1I2F5pRL4kpspa1V7Um0"
-          }
-        }
+        "kind": "odata-v2",
+        "model": "srv/external/API_BUSINESS_PARTNER"
+         
       }
     }
   },
