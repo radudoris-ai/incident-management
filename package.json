@@ -63,7 +63,7 @@
           "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/",
           "headers": {
             "APIKey": "RkXoA2GTHldR1I2F5pRL4kpspa1V7Um0"
-          }
+        }
         }
       }
     }

@@ -14,11 +14,6 @@ annotate service.Incidents with @(
                 Label : '{i18n>Customer}',
                 Value : customer_ID,
             },
-            {
-                $Type : 'UI.DataField',
-                Value : participantDo.BusinessPartnerName,
-                Label : 'BusinessPartnerName',
-            },
         ],
     },
     UI.Facets : [
@@ -69,11 +64,6 @@ annotate service.Incidents with @(
             $Type : 'UI.DataField',
             Value : status.descr,
             Label : '{i18n>Urgency}',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : participantDo.BusinessPartnerName,
-            Label : 'BusinessPartnerName',
         },
     ],
     UI.SelectionFields : [

@@ -1,12 +1,11 @@
 using { cuid, managed, sap.common.CodeList } from '@sap/cds/common';
-using { API_BUSINESS_PARTNER } from '../srv/external/API_BUSINESS_PARTNER';
+//using { API_BUSINESS_PARTNER } from '../srv/external/API_BUSINESS_PARTNER';
 namespace sap.capire.incidents; 
 
 /**
 * Incidents created by Customers.
 */
-entity Incidents : cuid, managed {  
-participantDo: Association to many API_BUSINESS_PARTNER.A_BusinessPartner;    
+entity Incidents : cuid, managed {    
 customer     : Association to Customers;
 title        : String  @title : 'Title';
 urgency        : Association to Urgency default 'M';
@@ -26,7 +25,7 @@ entity Customers : managed {
 key ID        : String;
 firstName     : String;
 lastName      : String;
-name          : String = trim(firstName ||' '|| lastName);
+name          : String; //= trim(firstName ||' '|| lastName);
 email         : EMailAddress;
 phone         : PhoneNumber;
 incidents     : Association to many Incidents on incidents.customer = $self;

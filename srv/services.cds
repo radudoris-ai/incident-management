@@ -10,7 +10,7 @@ service ProcessorService {
     @readonly
     entity Customers as projection on my.Customers;
 
-    entity Participants as projection on S4.A_BusinessPartner;
+    entity MyBusinessPartner as projection on S4.A_BusinessPartner;
 
 }
 annotate ProcessorService.Incidents with @odata.draft.enabled;     
